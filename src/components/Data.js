@@ -1,6 +1,5 @@
+import React from "react";
 
-import axios from "axios";
-import React, {useEffect, useState} from "react";
 const Data = ({showData,ageData,genderData,nationData}) => {
   // const [ageData, setAgeData] = useState("")
   // const [genderData, setGenderData] = useState("")
