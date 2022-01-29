@@ -1,16 +1,21 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import SubmitName from "./components/SubmitName"
 import axios from "axios"
 import Data from "./components/Data"
 const App = () => {
+
   const [newName, setNewName] = useState("")
+
   const [submitted,setSubmitted] = useState(false)
+
   const [ageLoaded,setAgeLoaded] = useState(false)
   const [genderLoaded, setGenderLoaded] = useState(false)
   const [nationLoaded, setNationLoaded] = useState(false)
+
   const [age,setAge] = useState("")
   const [gender,setGender] = useState("")
   const [nation,setNation] = useState("")
+
   const handleSubmit = (event) => {
     console.log(`Submitted ${newName}`)
     setSubmitted(true)
@@ -24,6 +29,7 @@ const App = () => {
     getNationData(newName)
     setNewName("")
   }
+
   const getAgeData = (name) => {
     return axios
       .get("https://api.agify.io?name="+name)
@@ -33,6 +39,7 @@ const App = () => {
         console.log(age)
       })
   }
+
   const getGenderData = (name) => {
     return axios
     .get("https://api.genderize.io?name="+name)
@@ -42,6 +49,7 @@ const App = () => {
       console.log(gender)
     })
   }
+
   const getNationData = (name) => {
     return axios
       .get("https://api.nationalize.io?name="+name)
@@ -53,7 +61,6 @@ const App = () => {
   }
 
   if(submitted){
-
     if(ageLoaded && genderLoaded && nationLoaded) {
       console.log(age,gender,nation)
       return (
