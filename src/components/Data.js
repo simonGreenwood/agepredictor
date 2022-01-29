@@ -20,7 +20,7 @@ const Data = ({showData,ageData,genderData,nationData}) => {
         </ul>
       </div>
     )
-  } else {
+  } else{
     return (
       <h1>Invalid name!</h1>
     )
