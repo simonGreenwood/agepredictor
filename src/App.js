@@ -1,9 +1,16 @@
 import React, {useState} from "react";
-import SubmitName from "./components/SubmitName"
 import axios from "axios"
+
+import SubmitName from "./components/SubmitName"
 import Data from "./components/Data"
 import Footer from "./components/Footer"
+
 const App = () => {
+   
+  const appStyle = {
+    textAlign: "center",
+    fontFamily: "Roboto",
+  }
 
   const [newName, setNewName] = useState("")
 
@@ -65,7 +72,7 @@ const App = () => {
     if(ageLoaded && genderLoaded && nationLoaded) {
       console.log(age,gender,nation)
       return (
-        <div>
+        <div style={appStyle}>
           <SubmitName name={newName} onNameChange={(event) => setNewName(event.target.value)} onSubmit={event => handleSubmit(event)}/>
           <Data ageData={age} genderData={gender} nationData={nation}/>
           <Footer/>
@@ -73,7 +80,7 @@ const App = () => {
       ) 
     } else {
       return (
-        <div>
+        <div style={appStyle}>
           <SubmitName name={newName} onNameChange={(event) => setNewName(event.target.value)} onSubmit={event => handleSubmit(event)}/>
           <h1>Loading Data...</h1>
           <Footer/>
@@ -82,7 +89,7 @@ const App = () => {
     }
   } else {
     return (
-      <div>
+      <div style={appStyle}>
         <SubmitName name={newName} onNameChange={(event) => setNewName(event.target.value)} onSubmit={event => handleSubmit(event)}/>
         <Footer/>
       </div>

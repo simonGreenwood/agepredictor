@@ -1,15 +1,27 @@
+import {Button, TextField, Typography} from '@mui/material';
 const SubmitName = ({name,onNameChange,onSubmit}) => {
-    return (
-        <div>
-            <h1>Enter your name here:</h1>
-            <form onSubmit={(event) => onSubmit(event)}>
-            <label>
-                Name:
-                <input type="text" value={name} onChange={event => onNameChange(event)}/>
-            </label>
-            <input type="submit" value="Submit"/>
-        </form>
-      </div>
-    )
+
+  const nameInput = {
+    marginTop:'25px'
+  }
+  const button = {
+    marginTop:'10px',
+    marginBottom:'10px'
+  }
+  
+  const title = {
+    marginTop:'10px'
+  }
+
+  return (
+    <div>
+      <Typography variant="h4" component="h2" style={title} >Enter your name here:</Typography>
+      <form onSubmit={(event) => onSubmit(event)}>
+          <TextField id="outlined-basic" label="Enter your name" variant="outlined" style={nameInput} value={name} onChange={event => onNameChange(event)}/>
+          <br/>
+          <Button variant="contained" type="submit" className="button" style={button}>Go</Button>
+      </form>
+    </div>
+  )
 }
 export default SubmitName

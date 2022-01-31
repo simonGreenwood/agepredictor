@@ -1,7 +1,15 @@
+import {Typography,Link} from '@mui/material';
+
 const Footer = () => {
+    const footerStyle = { 
+        bottom:"0px",
+        position:"absolute",
+        width:"100%"
+    }
     return (
-        <div>
-            <p>Created by Simon. Source code available at <a href="https://github.com/simonGreenwood/agepredictor" target="_blank" rel="noopener">https://github.com/simonGreenwood/agepredictor</a></p>
+        <div style={footerStyle}>
+            <Typography>Created by Simon. </Typography>
+            <Typography>Source code available at <Link href="https://github.com/simonGreenwood/agepredictor" variant="body2">https://github.com/simonGreenwood/agepredictor</Link></Typography>
         </div>
     )
 }
