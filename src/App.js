@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import SubmitName from "./components/SubmitName"
 import axios from "axios"
 import Data from "./components/Data"
+import Footer from "./components/Footer"
 const App = () => {
 
   const [newName, setNewName] = useState("")
@@ -67,6 +68,7 @@ const App = () => {
         <div>
           <SubmitName name={newName} onNameChange={(event) => setNewName(event.target.value)} onSubmit={event => handleSubmit(event)}/>
           <Data ageData={age} genderData={gender} nationData={nation}/>
+          <Footer/>
         </div>
       ) 
     } else {
@@ -74,6 +76,7 @@ const App = () => {
         <div>
           <SubmitName name={newName} onNameChange={(event) => setNewName(event.target.value)} onSubmit={event => handleSubmit(event)}/>
           <h1>Loading Data...</h1>
+          <Footer/>
         </div>
       ) 
     }
@@ -81,6 +84,7 @@ const App = () => {
     return (
       <div>
         <SubmitName name={newName} onNameChange={(event) => setNewName(event.target.value)} onSubmit={event => handleSubmit(event)}/>
+        <Footer/>
       </div>
     )
   }
