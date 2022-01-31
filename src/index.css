@@ -1,1 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+body {
+    background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00,#00ffff,#0000ff,#ff00ff );
+    background: linear-gradient(90deg,rgb(62,35,255),rgb(60,255,60),rgb(255,128,0),rgb(255,35,98),rgb(45,175,230),rgb(255,0,255));
+    background-size: 1000% 1000%;
+    animation: AnimationName 60s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
