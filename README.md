@@ -1,7 +1,7 @@
 # Predictor App
 This project is built with React and uses the Agify set of APIs. 
 
-### Setup 
+## Setup 
 `git clone https://github.com/simonGreenwood/agepredictor`
 <br>
 `cd agepredictor`
